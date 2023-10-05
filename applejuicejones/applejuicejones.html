@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<link href="css/if.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+	
+	<h1>Some Memorable Movies</h1>
+	<h3><span class="ital">Apple Juice Jones</span> (Edvin Marcks, 2023)</h3>
+	<div class="sidebyside">
+	<img class="filmstill" src="images/ .jpeg" onClick="onClick_SPVW_img01()" alt="apple grab 1">
+	<img class="filmstill" src="images/AJJ_02.jpeg" onClick="onClick_SPVW_img02()" alt="apple grab 2">
+	<img class="filmstill" src="images/AJJ_03.jpeg" onClick="onClick_SPVW_img03()" alt="apple grab 3">
+	</div>
+	<p class="filminfo" id="SPVW_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil similique, possimus perferendis, numquam, quo dolorum dicta blanditiis voluptatum mollitia pariatur magnam voluptatibus. Ullam repudiandae consequuntur iusto ratione incidunt iure eligendi omnis, provident enim tenetur unde molestias vel, harum dolorum vero sed culpa voluptates quo ab alias voluptatum aspernatur veniam. Commodi?</p>
+	
+	<button type="button" onClick="gotomovie()" id="gotoMovie_btn"> go to movie</button>
+</body>
+<script>
+
+// SCOTT PILGRIM VS THE WORLD section ********************************
+
+var gotoMovie_btn = document.getElementById("gotoMovie_btn");
+gotoMovie_btn.style.visibility = "hidden";
+	
+var img01_clicked = false;
+var img02_clicked = false;
+var img03_clicked = false;
+	
+	
+var SPVW_text = document.getElementById("SPVW_text")
+var SPVW00 = "Apple Juice Jones is the final project of my Freshman year. The story is told through photos instead of moving images. I want to tell the story of a photographer hence the use of still images. This tells the story of an artist struggling to believe in their craft."
+SPVW_text.innerHTML = SPVW00
+	
+var SPVW01 = "Most of the film is shown in black and white to show the loss of belief in their craft. I found the mirror at Goodwill and decided to use it as the main prop. The mirror is supposed to represent the idea of greed."
+	
+function onClick_SPVW_img01(){
+	SPVW_text.innerHTML = SPVW01;
+	img01_clicked = true;
+	console.log("img01_clicked = " + img01_clicked);
+	revealButton();
+}
+	
+var SPVW02 = "This shows Apple Juice Jones getting creativity back and wanting to continue pursuing photography. This is the only moment where all color is demonstrated throughout the film representing the flow of creativity returning. All of the film was shot in the woods behind Cambridge even though it was close to the road I didn't have to worry about audio so it was a perfect place to shoot."
+	
+function onClick_SPVW_img02(){
+	SPVW_text.innerHTML = SPVW02;
+	img02_clicked = true;
+	console.log("img02_clicked = " + img02_clicked);
+	revealButton();
+}
+	
+var SPVW03 = "Editing this film took a long time since I needed to be able to combine black and white with color. The color represents the power the mirror has and makes it stand out from its black-and-white surroundings."
+	
+function onClick_SPVW_img03(){
+	SPVW_text.innerHTML = SPVW03;
+	img03_clicked = true;
+	console.log("img03_clicked = " + img03_clicked);
+	revealButton();
+}
+	
+function revealButton(){
+	if (img01_clicked && img02_clicked && img03_clicked){
+		console.log("REVEAL BUTTON");
+		gotoMovie_btn.style.visibility = "Visible"
+	}	
+}
+	
+function gotomovie(){
+	window.open("https://www.youtube.com/watch?v=xrrxhZLGabE", "_blank")
+}
+	
+</script>
+</html>
