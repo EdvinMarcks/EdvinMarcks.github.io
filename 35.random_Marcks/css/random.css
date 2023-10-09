@@ -1,0 +1,8 @@
+@charset "UTF-8";
+.screenshot {
+    width: 400px;
+    border-style: solid;
+}
+.sideBySide {
+    display: flex;
+}
